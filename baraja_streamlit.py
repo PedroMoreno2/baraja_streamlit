@@ -13,12 +13,15 @@ for p in palito:
 st.write(palos_lis)
 total=len(palos_lis)
 st.write(total)
-x=input("¿Cuántas cartas quieres?:")
-z=int(x)
-cartas=[]
-while z!=0:
-  c=random.choice(palos_lis)
-  cartas.append(c)
-  palos_lis.remove(c)
-  z-=1
+x=st.text_input("¿Cuántas cartas quieres?:")
+if(st.button("Las quiero YA")):
+  z=int(x.title()) 
+  cartas=[]
+  while z!=0:
+    c=random.choice(palos_lis)
+    cartas.append(c)
+    palos_lis.remove(c)
+    z-=1
 st.write(cartas)
+
+
