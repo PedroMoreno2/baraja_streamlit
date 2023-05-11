@@ -5,14 +5,10 @@ numeros="1 2 3 4 5 6 7 Sota Caballo Rey"
 palito=palos.split(" ")
 numerito=numeros.split(" ")
 palos_lis=[]
-#print(palito)
-#print(numerito)
 for p in palito:
   for n in numerito: 
     palos_lis.append(n+p)
-st.write(palos_lis)
-total=len(palos_lis)
-st.write(total)
+st.write("Hay un total de ",len(palos_lis),"cartas")
 x=st.text_input("¿Cuántas cartas quieres?:")
 if(st.button("Las quiero YA")):
   z=int(x.title()) 
