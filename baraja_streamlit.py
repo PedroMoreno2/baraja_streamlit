@@ -8,7 +8,7 @@ palos_lis=[]
 for p in palito:
   for n in numerito: 
     palos_lis.append(n+p)
-st.write("Hay un total de ",len(palos_lis),"cartas")
+st.write("Hay un total de ",len(palos_lis),"cartas, de los palos "+palos)
 x=st.text_input("¿Cuántas cartas quieres?:")
 if(st.button("Las quiero YA")):
   z=int(x.title()) 
