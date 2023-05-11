@@ -1,11 +1,24 @@
 import streamlit as st
-import requests
-baraja=requests.get("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
-codigo=baraja.json()["deck_id"]
-# Ahora a sacar una carta de esa baraja:
-cartas=requests.get("https://deckofcardsapi.com/api/deck/"+codigo+"/draw/?count=1")
-carta_d=cartas.json()["cards"]
-carta_image=carta_d[0]["image"]
-st.header("Baraja, cartas al azar")
-if(st.button("Carta al azar")):
-    st.image("carta_image")
+import random
+palos="Copas Espadas Bastos Oros"
+numeros="1 2 3 4 5 6 7 Sota Caballo Rey"
+palito=palos.split(" ")
+numerito=numeros.split(" ")
+palos_lis=[]
+#print(palito)
+#print(numerito)
+for p in palito:
+  for n in numerito: 
+    palos_lis.append(n+p)
+st.write(palos_lis)
+total=len(palos_lis)
+st.write(total)
+x=input("¿Cuántas cartas quieres?:")
+z=int(x)
+cartas=[]
+while z!=0:
+  c=random.choice(palos_lis)
+  cartas.append(c)
+  palos_lis.remove(c)
+  z-=1
+st.write(cartas)
